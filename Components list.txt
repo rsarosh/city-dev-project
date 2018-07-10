@@ -1,0 +1,33 @@
+Components:
+
+	__________________
+	[1] => TopicMenu
+		The menu containing the types of skills - essential, general, specialist, and all of the skills that fall under them
+
+		State: {
+			SkillTypeTabs: Array of 3 SkillTypeTabs
+
+		}
+
+		_____
+		[1.1] => SkillTypeTab
+			Essential, general or specialist in the TopicMenu
+
+		_____
+		[1.2] => TopicMenuColumn
+			Each named column in the TopicMenu. Groups together different columns
+
+			[1.2.1] => TopicMenuLink
+				Each link in a TopicMenuColumn
+
+	__________________
+	[2] => SearchResults
+
+
+
+
+	cosmosdb
+
+
+
+	fields 
