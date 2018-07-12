@@ -1,29 +1,49 @@
-Components:
+Components, for building the userflow without really needing any data
 
 	__________________
 	[1] => TopicMenu
-		The menu containing the types of skills - essential, general, specialist, and all of the skills that fall under them
-
-		State: {
-			SkillTypeTabs: Array of 3 SkillTypeTabs
-
-		}
+		The menu containing the types of skills - essential, general, specialist, and all of the skills that fall under them. Similar to the Library button at the top of https://www.linkedin.com/learning
 
 		_____
-		[1.1] => SkillTypeTab
+		[1.1] => TopicMenuSkillTypeTab
 			Essential, general or specialist in the TopicMenu
 
 		_____
 		[1.2] => TopicMenuColumn
 			Each named column in the TopicMenu. Groups together different columns
 
+			_____
 			[1.2.1] => TopicMenuLink
 				Each link in a TopicMenuColumn
 
 	__________________
-	[2] => SearchResults
+	[2] => SearchResultsPage
+		Similar to https://www.linkedin.com/learning/topics/game-design-and-development (the whole page is the component)
+
+		_____
+		[2.1] => SearchResultsArea
+			A list of all the search results (courses) on SearchResultsPage
+
+			_____
+			[2.1.1] => SearchResult
+				Displays information about the course and a link to that course. Information such as a picture of the course as well.
+
+		_____
+		[2.2] => SearchResultsFiltersArea
+			The left area with all the filters.
+
+			_____
+			[2.2.1] => SearchResultsFilterGroup
+				One group of filters, such as "Software", "Author", or "Business Skill Level"
+
+				_____
+				[2.2.1.1] => SearchResultsFilterCheckbox
+					Under the group of filters, one row with a checkbox, name and amount next to it. For example, "Courses", "Videos", "Learning Paths", etc. When the checkbox is changed, it should automatically update the SearchResultsArea with new SearchResults based on the filters.
 
 
+	__________________
+	[3] => CoursePage
+		The generated content for a course page, different for every different course. You are taken to this page when you click on a SearchResult's link.
 
 
 	cosmosdb
@@ -31,3 +51,10 @@ Components:
 
 
 	fields 
+
+
+
+
+hpe details
+
+11 am friday

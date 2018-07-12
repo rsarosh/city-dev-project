@@ -1,8 +1,41 @@
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+// import App from './App';
+// import registerServiceWorker from './registerServiceWorker';
+
+// ReactDOM.render(<App />, document.getElementById('root'));
+// registerServiceWorker();
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import MainPage from './MainPage';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+import 'bootstrap/dist/css/bootstrap.css';
+
+import './index.css';
+
+// Application view with routes
+
+ReactDOM.render((
+  <Router>
+    <div>
+      {/* <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/topics">Topics</Link>
+        </li>
+      </ul>
+      <hr /> */}
+
+      <Route exact path="/" component={MainPage} />
+      <Route path="/main" component={MainPage} />
+    </div>
+  </Router>
+), document.getElementById('root'))
