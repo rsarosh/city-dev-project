@@ -26,7 +26,7 @@ export default class SearchResults extends React.Component {
         return (
             <div>
                 <h1>
-                    {this.props.match.params.topicName.replace(/_/g, ' ')}
+                    Search Results for [WORD]
                 </h1>
             </div>
         );

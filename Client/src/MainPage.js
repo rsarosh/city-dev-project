@@ -1,5 +1,6 @@
 import React from 'react';
 import TopicMenu from './TopicMenu';
+import SearchResults from './SearchResults';
 
 export default class MainPage extends React.Component {
     constructor(props) {
@@ -23,10 +24,13 @@ export default class MainPage extends React.Component {
 
     render() {
 
+        const skillNames = ['Typing', 'Web Development', 'Accounting', 'Microsoft Office', 'UX', 'Game Design', 'Mobile Developer', 'IT', 'Graphic Design', 'Microsoft Excel', 'System Administration', 'Microsoft Word']
+
         return (
             <div>
                 <TopicMenu />
-                <GetStarted />
+                <GetStarted skills={skillNames}/>
+                <SearchResults />
             </div>
 
         );
@@ -36,9 +40,27 @@ export default class MainPage extends React.Component {
 // Get started! Explore skills such as:
 class GetStarted extends React.Component {
     render() {
+
+        let skillLinks = this.props.skills.map(function (skill) {
+            return <div key={skill}>{skill}</div>;
+        })
+
         return <div>
             <div>
-                Get started! Explore skill such as:
+                Get started! Explore skills such as:
+                <div>
+                    {skillLinks}
+                </div>
+            </div>
+        </div>;
+    }
+}
+
+class GetStartedSkill extends React.Component {
+    render() {
+        return <div>
+            <div>
+                {this.props.name}
             </div>
         </div>;
     }
