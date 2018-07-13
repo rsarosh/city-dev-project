@@ -93,9 +93,9 @@ export default class TopicMenu extends React.Component {
 // Allows the user to switch between active tabs
 class TopicMenuSkillTypeTab extends React.Component {
 
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
         return <div onMouseOver={this.props.onMouseOver} className={'topic-menu-skill-type-tab' + (this.props.active === true ? ' active-topic-menu-skill-type-tab' : '')}>
@@ -106,9 +106,9 @@ class TopicMenuSkillTypeTab extends React.Component {
 
 // 3 different columns, 
 class TopicMenuColumn extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props); 
+    // }
 
     render() {
         let links = this.props.links.map(function (link) {

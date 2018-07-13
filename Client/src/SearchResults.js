@@ -1,7 +1,6 @@
 import React from 'react';
-import TopicMenu from './TopicMenu';
 
-export default class MainPage extends React.Component {
+export default class SearchResults extends React.Component {
     constructor(props) {
         super(props);
 
@@ -14,7 +13,7 @@ export default class MainPage extends React.Component {
 
         this.state = {
             'mobileView': mobileView
-        };
+        }; 
     }
 
     componentDidMount() {
@@ -23,23 +22,13 @@ export default class MainPage extends React.Component {
 
     render() {
 
+        console.log(this.props);
         return (
             <div>
-                <TopicMenu />
-                <GetStarted />
+                <h1>
+                    {this.props.match.params.topicName.replace(/_/g, ' ')}
+                </h1>
             </div>
-
         );
-    }
-}
-
-// Get started! Explore skills such as:
-class GetStarted extends React.Component {
-    render() {
-        return <div>
-            <div>
-                Get started! Explore skill such as:
-            </div>
-        </div>;
     }
 }
