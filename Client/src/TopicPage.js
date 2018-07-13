@@ -13,7 +13,7 @@ export default class TopicPage extends React.Component {
 
         this.state = {
             'mobileView': mobileView
-        };
+        }; 
     }
 
     componentDidMount() {
