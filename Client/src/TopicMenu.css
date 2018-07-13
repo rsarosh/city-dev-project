@@ -5,4 +5,29 @@
 /* Right area */
 .topic-menu-topic-area {
     float: left;
+    padding: 10px;
+    background-color: #d39f9a;
+    min-height: 192px;
+}
+.topic-menu-skill-type-tab {
+    padding: 20px;
+    cursor: pointer;
+    background-color: rgb(221,221,221);
+}
+
+.active-topic-menu-skill-type-tab {
+    background-color: rgb(200,200,200);
+}
+
+.topic-menu-column {
+    float: left;
+    width: 200px;
+}
+
+.hidden {
+    display: none;
+}
+
+.topic-menu-column-header {
+    font-weight: bold;
 }

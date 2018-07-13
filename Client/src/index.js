@@ -11,6 +11,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import MainPage from './MainPage';
+import TopicPage from './TopicPage';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -36,6 +37,7 @@ ReactDOM.render((
 
       <Route exact path="/" component={MainPage} />
       <Route path="/main" component={MainPage} />
+      <Route path="/topics/:topicName" component={TopicPage} />
     </div>
   </Router>
 ), document.getElementById('root'))
