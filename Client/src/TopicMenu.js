@@ -43,17 +43,17 @@ export default class TopicMenu extends React.Component {
 
             0: {
                 'Learning Paths': ['Start a small business'],
-                'Subjects': ['Digital Marketing', 'Accounting'],
+                'Skills': ['Digital Marketing', 'Accounting'],
                 'Software': ['Microsoft Excel', 'Salesforce']
             },
             1: {
                 'Learning Paths': ['Officia Ipsam Quas Aut', 'Aperiam Eligendi'],
-                'Subjects': ['Digital Marketing', 'Graphic Design'],
+                'Skills': ['Digital Marketing', 'Graphic Design'],
                 'Software': ['Photoshop', 'Illustrator']
             },
             2: {
                 'Learning Paths': ['Esse Velit', 'Labore lure Magnam'],
-                'Subjects': ['Web Development', 'Data Analysis', 'Graphic Design'],
+                'Skills': ['Web Development', 'Data Analysis', 'Graphic Design'],
                 'Software': ['Photoshop', 'Microsoft Word', 'Microsoft Excel', 'Salesforce', 'Illustrator']
             },
         };
@@ -71,17 +71,17 @@ export default class TopicMenu extends React.Component {
                 <div className="topic-menu-topic-area">
                     <div id="topicAreaForTab_0" className={' ' + (this.state.OpenedSkillTypeTab !== 0 ? 'hidden' : '')}>
                         <TopicMenuColumn name="Learning Paths" links={topics[0]['Learning Paths']} />
-                        <TopicMenuColumn name="Subjects" links={topics[0]['Subjects']} />
+                        <TopicMenuColumn name="Skills" links={topics[0]['Skills']} />
                         <TopicMenuColumn name="Software" links={topics[0]['Software']} />
                     </div>
                     <div id="topicAreaForTab_1" className={' ' + (this.state.OpenedSkillTypeTab !== 1 ? 'hidden' : '')}>
                         <TopicMenuColumn name="Learning Paths" links={topics[1]['Learning Paths']} />
-                        <TopicMenuColumn name="Subjects" links={topics[1]['Subjects']} />
+                        <TopicMenuColumn name="Skills" links={topics[1]['Skills']} />
                         <TopicMenuColumn name="Software" links={topics[1]['Software']} />
                     </div>
                     <div id="topicAreaForTab_2" className={' ' + (this.state.OpenedSkillTypeTab !== 2 ? 'hidden' : '')}>
                         <TopicMenuColumn name="Learning Paths" links={topics[2]['Learning Paths']} />
-                        <TopicMenuColumn name="Subjects" links={topics[2]['Subjects']} />
+                        <TopicMenuColumn name="Skills" links={topics[2]['Skills']} />
                         <TopicMenuColumn name="Software" links={topics[2]['Software']} />
                     </div>
                 </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import TopicMenu from './TopicMenu';
+import './MainPage.css';
 import SearchResults from './SearchResults';
+import { Link } from "react-router-dom";
 
 export default class MainPage extends React.Component {
     constructor(props) {
@@ -29,8 +31,10 @@ export default class MainPage extends React.Component {
         return (
             <div>
                 <TopicMenu />
-                <GetStarted skills={skillNames}/>
-                <SearchResults />
+                <div className="overall-content">
+                    <GetStarted skills={skillNames} />
+                    <SearchResults />
+                </div>
             </div>
 
         );
@@ -42,25 +46,17 @@ class GetStarted extends React.Component {
     render() {
 
         let skillLinks = this.props.skills.map(function (skill) {
-            return <div key={skill}>{skill}</div>;
+            return <span key={skill} className="skill-link">
+                <Link to={"/topics/" + skill.replace(/ /g, "_")}>{skill}</Link>
+            </span>;
         })
 
-        return <div>
+        return <div className="main-page-get-started">
             <div>
-                Get started! Explore skills such as:
+                <div className="main-page-get-started-header">Get started! Explore skills such as:</div>
                 <div>
                     {skillLinks}
                 </div>
-            </div>
-        </div>;
-    }
-}
-
-class GetStartedSkill extends React.Component {
-    render() {
-        return <div>
-            <div>
-                {this.props.name}
             </div>
         </div>;
     }
