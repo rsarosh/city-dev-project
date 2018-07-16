@@ -12,6 +12,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import MainPage from './MainPage';
 import TopicPage from './TopicPage';
+import CoursePage from './CoursePage';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -38,6 +39,7 @@ ReactDOM.render((
       <Route exact path="/" component={MainPage} />
       <Route path="/main" component={MainPage} />
       <Route path="/topics/:topicName" component={TopicPage} />
+      <Route path="/courses/:courseID" component={CoursePage} />
     </div>
   </Router>
 ), document.getElementById('root'))

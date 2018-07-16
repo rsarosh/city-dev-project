@@ -20,6 +20,9 @@
 .search-result-image-container {
     float: left;
 }
+.search-result-image-container:hover {
+    opacity: 0.8;
+}
 .search-result-description-container {
     float: left;
     width: 70%;
