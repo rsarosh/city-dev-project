@@ -70,7 +70,7 @@ class SearchResult extends React.Component {
                 <img className="search-result-image" src={data.image} alt={data.name}/>
             </div>
             <div className="search-result-description-container">
-                <h2>{data.name}</h2>
+                <h2 className="search-result-title">{data.name}</h2>
                 <div className="skill-and-date">{data.date}&nbsp;&nbsp;&nbsp;{data.skillLevel}</div>
                 <div className="description">
                     {data.description} <a href="#">Read more...</a>
