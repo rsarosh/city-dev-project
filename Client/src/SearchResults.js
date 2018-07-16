@@ -1,5 +1,6 @@
 import React from 'react';
 import './SearchResults.css';
+import { Link } from "react-router-dom";
 
 export default class SearchResults extends React.Component {
     constructor(props) {
@@ -64,16 +65,17 @@ class SearchResult extends React.Component {
     render() {
 
         let data = this.props.db[this.props.id];
+        let coursePageLink = "/courses/" + this.props.id + "/" + data.name.replace(/ /g,"_");
 
         return <div className="search-result">
             <div className="search-result-image-container">
-                <img className="search-result-image" src={data.image} alt={data.name}/>
+            <Link to={coursePageLink}><img className="search-result-image" src={data.image} alt={data.name}/></Link>
             </div>
             <div className="search-result-description-container">
-                <h2>{data.name}</h2>
+                <h2 className="search-result-title">{data.name}</h2>
                 <div className="skill-and-date">{data.date}&nbsp;&nbsp;&nbsp;{data.skillLevel}</div>
                 <div className="description">
-                    {data.description} <a href="#">Read more...</a>
+                    {data.description} <Link to={coursePageLink}>Read more...</Link>
                 </div>
             </div>
         </div>;

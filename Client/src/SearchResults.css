@@ -3,9 +3,12 @@
 }
 
 .search-result {
-    margin-bottom: 30px;
     clear: both;
-    padding-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    min-height: 200px;
+    min-width: 200px;
+    border: 1px solid rgb(240,240,240);
 }
 
 .search-result-image {
@@ -16,7 +19,9 @@
 }
 .search-result-image-container {
     float: left;
-    margin-bottom: 20px;
+}
+.search-result-image-container:hover {
+    opacity: 0.8;
 }
 .search-result-description-container {
     float: left;
@@ -32,4 +37,7 @@
     color: #aaa;
     font-size: 12px;
     margin-bottom: 5px;
+}
+.search-result-title {
+    font-size: 22px;
 }
