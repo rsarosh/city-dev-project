@@ -1,0 +1,32 @@
+.main-page-get-started {
+    clear: left;
+}
+.main-page-get-started-header {
+    font-size: 20px;
+}
+/* .skill-link {
+    
+} */
+
+.skill-link > a {
+    color: white;
+    font-size: 14px;
+    background-color: #d39f9a;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    border-radius: 9px;
+    filter: blur(0px);
+
+    padding: 9px 15px;
+}
+.skill-link > a:hover {
+    text-decoration: none;
+    color: gray;
+}
+
+
+.overall-content {
+    width: 940px;
+    margin: auto;
+}

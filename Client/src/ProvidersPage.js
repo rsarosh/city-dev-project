@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class TopicPage extends React.Component {
+export default class ProvidersPage extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -10,12 +10,11 @@ export default class TopicPage extends React.Component {
     }
 
     render() {
-
-        console.log(this.props);
+        
         return (
             <div>
                 <h1>
-                    {this.props.match.params.topicName.replace(/_/g, ' ')}
+                    Providers page
                 </h1>
             </div>
         );
