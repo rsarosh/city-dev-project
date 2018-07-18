@@ -1,5 +1,6 @@
 import React from 'react';
 import TopicMenu from './TopicMenu';
+import NavBar from './NavBar';
 import './MainPage.css';
 import SearchResults from './SearchResults';
 import { Link } from "react-router-dom";
@@ -30,7 +31,7 @@ export default class MainPage extends React.Component {
 
         return (
             <div>
-                <TopicMenu />
+                <NavBar />
                 <div className="overall-content">
                     <GetStarted skills={skillNames} />
                     <SearchResults />

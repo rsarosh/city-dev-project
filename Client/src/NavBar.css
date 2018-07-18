@@ -1,0 +1,41 @@
+/* Left area */
+.nav-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 940px;
+    background-color: aquamarine;
+}
+
+.nav-col{
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.nav-col-1{
+    width: 16.66666666667%;
+    
+}
+.nav-col-9{
+    width: 75%;
+}
+
+div{
+display: block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 800px;
+    
+}
+.dropdown:hover .dropdown-content {display: block;}
