@@ -1,6 +1,6 @@
 import React from 'react';
 import './NavBar.css';
-import TopicMenu from './TopicMenu.js';
+import TopicMenu from './TopicMenu';
 import { Link } from "react-router-dom";
 
 // The menu that appears at the top.
@@ -19,16 +19,21 @@ export default class NavBar extends React.Component {
         return (
             <div class='nav-container'>
                 <div class='nav-row'>
-                    <div class='nav-col nav-col-1'>test
+                    <div class='nav-col nav-col-1'><a href="/"><div class="site-name">Digital Skills for All</div></a>
                     <div class="dropdown">
-                        <div class="w-icon-dropdown-toggle"></div>
-                        <img src="https://uploads-ssl.webflow.com/5b367a6f5b093e44caec1fd5/5b415480e9a78842553fbfaf_download.jpeg" width="10" class="image-2"/>
+                        <div class="w-icon-dropdown-toggle">
+                    <img src="https://uploads-ssl.webflow.com/5b367a6f5b093e44caec1fd5/5b415480e9a78842553fbfaf_download.jpeg" width="10" class="image-book"/></div>
                     <div class="dropdown-content">
                     <TopicMenu /></div>
                     </div>
                     </div>
-                    <div class='nav-col nav-col-9'>long test</div>
+                    <div class='nav-col nav-col-9'> </div>
                     
+                </div>
+                
+                <div class='nav-row'>
+                
+                <NavSearchBar/>
                 </div>
             </div>
             
@@ -36,7 +41,21 @@ export default class NavBar extends React.Component {
     }
 
 }
+class NavSearchBar extends React.Component {
+    render() {
 
 
 
+        return (
+        <div class='search-row'>
+        <div class='nav-col nav-col-9 search-box'>
+          search row 
+        </div>
+        <div class="nav-col nav-col-1">
+        <input type="submit" value="Search" class="search-button"></input>
+        </div>
+    </div>
+    );
+    }
+}
 

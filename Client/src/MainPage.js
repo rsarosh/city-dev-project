@@ -1,5 +1,6 @@
 import React from 'react';
 import TopicMenu from './TopicMenu';
+import SideFilter from './SideFilter';
 import NavBar from './NavBar';
 import './MainPage.css';
 import SearchResults from './SearchResults';

@@ -8,6 +8,9 @@
     padding: 10px;
     background-color: #d39f9a;
     min-height: 192px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    
 }
 .topic-menu-skill-type-tab {
     padding: 20px;
@@ -31,3 +34,4 @@
 .topic-menu-column-header {
     font-weight: bold;
 }
+
