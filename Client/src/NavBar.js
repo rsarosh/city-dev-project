@@ -1,6 +1,7 @@
 import React from 'react';
 import './NavBar.css';
 import TopicMenu from './TopicMenu';
+import NavSearchBar from './NavSearchBar';
 import { Link } from "react-router-dom";
 
 // The menu that appears at the top.
@@ -9,12 +10,18 @@ export default class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
- 
+            searchData: null
         };
+       /*
+        this.props.theData = "none";
+        this.onChange = this.onChange.bind(this)
+
+        function myCallback(theData1){
+            this.props.theData = theData1; 
+            
+        }*/
     }
     render() {
-
-       
 
         return (
             <div class='nav-container'>
@@ -33,7 +40,8 @@ export default class NavBar extends React.Component {
                 
                 <div class='nav-row'>
                 
-                <NavSearchBar/>
+                <NavSearchBar updateSearchText={(searchData) => this.setState({searchData})}/>
+                {this.state.searchData}
                 </div>
             </div>
             
@@ -41,21 +49,10 @@ export default class NavBar extends React.Component {
     }
 
 }
-class NavSearchBar extends React.Component {
-    render() {
-
-
-
-        return (
-        <div class='search-row'>
-        <div class='nav-col nav-col-9 search-box'>
-          search row 
-        </div>
-        <div class="nav-col nav-col-1">
-        <input type="submit" value="Search" class="search-button"></input>
-        </div>
-    </div>
-    );
-    }
-}
-
+/*
+const NavSearchBar = ({count, increaseCount}) => {
+    return(
+      <button onClick={() => increaseCount(count + 1)}>+</button>
+    )
+  };
+*/
