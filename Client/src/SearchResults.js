@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchResults.css';
-import SideFilter from './SideFilter.js';
+import SideFilter from './SideFilter';
 import { Link } from "react-router-dom";
 
 export default class SearchResults extends React.Component {
@@ -52,7 +52,8 @@ export default class SearchResults extends React.Component {
                 <h1 className="search-results-heading">
                     Search Results for [WORD]
                 </h1>
-                <SideFilter/>
+                <div className="sidefilter-container">
+                <SideFilter/></div>
                 <div className="search-results-container">
                     {searchResultComponents}
                 </div>
