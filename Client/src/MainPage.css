@@ -1,5 +1,6 @@
 .main-page-get-started {
     clear: left;
+
 }
 .main-page-get-started-header {
     font-size: 20px;
@@ -29,4 +30,11 @@
 .overall-content {
     width: 940px;
     margin: auto;
+}
+
+body{
+font-family: Lato, sans-serif;
+color: #333;
+font-size: 14px;
+line-height: 135%;
 }

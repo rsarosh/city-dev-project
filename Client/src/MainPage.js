@@ -1,5 +1,7 @@
 import React from 'react';
 import TopicMenu from './TopicMenu';
+import SideFilter from './SideFilter';
+import NavBar from './NavBar';
 import './MainPage.css';
 import SearchResults from './SearchResults';
 import { Link } from "react-router-dom";
@@ -7,18 +9,28 @@ import { Link } from "react-router-dom";
 export default class MainPage extends React.Component {
     constructor(props) {
         super(props);
-
+       /* this.onChange = this.onChange.bind(this);*/
         let mobileView = false;
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
             console.log('Mobile');
             mobileView = true;
-        }
+        };
 
         this.state = {
-            'mobileView': mobileView
+            'mobileView': mobileView, 
+            searchText: null
         };
+    
+        this.myCallback = function(dataFromChild){
+            //wtf
+           this.setState({ searchText: dataFromChild });
+           return dataFromChild;
+           console.log(dataFromChild);
+        }
+      
     }
+    
 
     componentDidMount() {
         document.title = 'Digital Skills For All';
@@ -30,10 +42,10 @@ export default class MainPage extends React.Component {
 
         return (
             <div>
-                <TopicMenu />
+                <NavBar callbackFromParent={this.myCallback}/>
                 <div className="overall-content">
                     <GetStarted skills={skillNames} />
-                    <SearchResults />
+                    <SearchResults searchData = {this.state.searchText} filterData = "" />
                 </div>
             </div>
 

@@ -63,9 +63,9 @@ export default class TopicMenu extends React.Component {
                 {/* <h1>TopicMenu Component</h1> */}
                 {/* Left column containing skill type tabs */}
                 <div className="topic-menu-skill-type-column">
-                    <TopicMenuSkillTypeTab onMouseOver={function () { that.switchTabOnHover(0) }} name="Essential" active={this.state.OpenedSkillTypeTab === 0} />
-                    <TopicMenuSkillTypeTab onMouseOver={function () { that.switchTabOnHover(1) }} name="General" active={this.state.OpenedSkillTypeTab === 1} />
-                    <TopicMenuSkillTypeTab onMouseOver={function () { that.switchTabOnHover(2) }} name="Specialist" active={this.state.OpenedSkillTypeTab === 2} />
+                    <TopicMenuSkillTypeTab onMouseOver={function () { that.switchTabOnHover(0) }} name="Business" active={this.state.OpenedSkillTypeTab === 0} />
+                    <TopicMenuSkillTypeTab onMouseOver={function () { that.switchTabOnHover(1) }} name="Creative" active={this.state.OpenedSkillTypeTab === 1} />
+                    <TopicMenuSkillTypeTab onMouseOver={function () { that.switchTabOnHover(2) }} name="Technology" active={this.state.OpenedSkillTypeTab === 2} />
                 </div>
                 {/* Right area containing the different topics */}
                 <div className="topic-menu-topic-area">
