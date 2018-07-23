@@ -49,10 +49,3 @@ export default class NavBar extends React.Component {
     }
 
 }
-/*
-const NavSearchBar = ({count, increaseCount}) => {
-    return(
-      <button onClick={() => increaseCount(count + 1)}>+</button>
-    )
-  };
-*/

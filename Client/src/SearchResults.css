@@ -41,3 +41,16 @@
 .search-result-title {
     font-size: 22px;
 }
+
+.sidefilter-container{
+    position: relative;
+    float: left;
+    display:block;
+    width: 25%;
+
+}
+.search-results-container{
+    position: relative;
+    float: right;
+    width: 75%;
+}

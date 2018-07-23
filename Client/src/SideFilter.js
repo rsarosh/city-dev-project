@@ -14,7 +14,7 @@ export default class SideFilter extends React.Component {
 
         return (
             <div>
-                <div class="w-hidden-small w-hidden-tiny w-col w-col-3">
+                
                 <div class="white-wrapper">
                 <h1>Filters</h1>
                 <div class="w-form">
@@ -27,7 +27,7 @@ export default class SideFilter extends React.Component {
                 <option value="First">Essentials</option>
                 <option value="Second">General</option>
                 <option value="Third">Specialist</option>
-                </select>
+                </select><br/>
                 <label for="email-2">Age:</label>
                 <select id="field-2" name="field-2" multiple="" class="w-select">
                 <option value="">Select one or more...</option>
@@ -71,7 +71,7 @@ export default class SideFilter extends React.Component {
                 <input type="submit" value="Search" class="round_buttons w-button"></input>
                 </form>
                 </div>
-                </div>
+                
             </div>
         );
     }
