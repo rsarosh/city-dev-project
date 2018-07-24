@@ -38,3 +38,17 @@ color: #333;
 font-size: 14px;
 line-height: 135%;
 }
+
+.account-login-and-signup-link > ul >li {
+    background: white;
+    padding: 5px;
+    margin: 5px 5px 5px 5px;
+}
+
+.account-login-and-signup-link > ul {
+    position: absolute;
+    top: 8px;
+    right:16px;
+    font-size: 18px;
+    list-style-type: none;
+}
