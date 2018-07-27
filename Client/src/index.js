@@ -13,8 +13,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import MainPage from './MainPage';
 import TopicPage from './TopicPage';
 import CoursePage from './CoursePage';
-import SignUp from './SignUp';
-import Login from './Login';
+import SignUp from './SignupAndLogin/SignUp';
+import Login from './SignupAndLogin/Login';
 
 import 'bootstrap/dist/css/bootstrap.css';
 

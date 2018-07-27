@@ -24,3 +24,8 @@
     border-radius: 15px;
     background: white;
 }
+
+
+input#error.form-control{
+    border: 1px solid red;
+}
