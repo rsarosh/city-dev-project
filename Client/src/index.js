@@ -14,16 +14,28 @@ import MainPage from './MainPage';
 import TopicPage from './TopicPage';
 import CoursePage from './CoursePage';
 import SignUp from './SignupAndLogin/SignUp';
-import Login from './SignupAndLogin/Login';
-
+//import Login from './SignupAndLogin/Login';
+import Callback from './Callback/Callback';
+import Auth from './Auth/Auth';
+import history from './history';
+import Login from './Login';
+import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import './index.css';
 
 // Application view with routes
+const auth = new Auth();
+
+const handleAuthentication = (nextState, replace) => {
+  if (/access_token|id_token|error/.test(nextState.location.hash)) {
+    auth.handleAuthentication();
+  }
+}
+
 
 ReactDOM.render((
-  <Router>
+  <Router history={history} component={MainPage}>
     <div>
       {/* <ul>
         <li>
@@ -38,12 +50,16 @@ ReactDOM.render((
       </ul>
       <hr /> */}
 
-      <Route exact path="/" component={MainPage} />
-      <Route path="/main" component={MainPage} />
-      <Route path="/sign-up" component={SignUp}/>
-      <Route path="/log-in" component={Login}/>
-      <Route path="/topics/:topicName" component={TopicPage} />
-      <Route path="/courses/:courseID" component={CoursePage} />
+      <Route path="/callback" render={(props) => {
+          handleAuthentication(props);
+          return <Callback {...props} /> 
+        }}/>
+       <Route exact path="/" render={(props) => <MainPage auth={auth} {...props} />} />
+       <Route path="/main" render={(props) => <MainPage auth={auth} {...props} />} />
+       <Route path="/sign-up" render={(props) => <SignUp auth={auth} {...props} />} />
+       <Route path="/log-in" render={(props) => <Login auth={auth} {...props} />} />
+       <Route path="/topics/:topicName" render={(props) => <TopicPage auth={auth} {...props} />} />
+       <Route path="/courses/:courseID" render={(props) => <CoursePage auth={auth} {...props} />} />
     </div>
   </Router>
 ), document.getElementById('root'))

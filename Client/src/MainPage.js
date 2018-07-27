@@ -43,7 +43,7 @@ export default class MainPage extends React.Component {
         return (
             <div>
                 <NavBar callbackFromParent={this.myCallback}/>
-                <UserLoginAndSignUp />
+                
                 <div className="overall-content">
                     <GetStarted skills={skillNames} />
                     <SearchResults searchData = {this.state.searchText} filterData = "" />
@@ -75,24 +75,3 @@ class GetStarted extends React.Component {
     }
 }
 
-//Main page link to login and sign
-class UserLoginAndSignUp extends React.Component {
-    render() {
-        const signUpHref = '/sign-up';
-        const loginHref = '/log-in';
-
-        return (
-            <div class='account-login-and-signup-link'>
-                <ul>
-                    <li> 
-                        <Link to={signUpHref}>Sign up</Link>
-                    </li>
-                    <li> 
-                        <Link to={loginHref}>Log in</Link> 
-                    </li>
-                </ul>
-            </div>
-        );
-    }
-   
-}

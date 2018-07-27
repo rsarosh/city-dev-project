@@ -21,6 +21,9 @@
 // export default App;
 
 import React from 'react';
+import Auth from './Auth/Auth.js';
+
+
 
 //a "root" component
 class App extends React.Component {
