@@ -14,8 +14,8 @@ import MainPage from './MainPage';
 import TopicPage from './TopicPage';
 import CoursePage from './CoursePage';
 import SignUp from './SignupAndLogin/SignUp';
-import Login from './SignupAndLogin/Login';
-//import Login from './Login'; Switch to this to use Auth0 Sign up
+//import Login from './SignupAndLogin/Login';
+import Login from './Login'; //uses Auth0
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
