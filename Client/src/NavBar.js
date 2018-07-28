@@ -66,7 +66,7 @@ class UserLoginAndSignUp extends React.Component {
                         <Link to={signUpHref} class='button'>Sign up</Link>
                     
                     
-                        <Link to={loginHref} class='button'>Log in</Link> 
+                        <Link to={loginHref} class='button'>Log in/out</Link> 
                     
                 
             </div>

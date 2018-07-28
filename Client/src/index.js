@@ -37,24 +37,12 @@ const handleAuthentication = (nextState, replace) => {
 ReactDOM.render((
   <Router history={history} component={MainPage}>
     <div>
-      {/* <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/topics">Topics</Link>
-        </li>
-      </ul>
-      <hr /> */}
-
       <Route path="/callback" render={(props) => {
           handleAuthentication(props);
-          return <Callback {...props} /> 
+          return <MainPage {...props} /> 
         }}/>
        <Route exact path="/" render={(props) => <MainPage auth={auth} {...props} />} />
+       <Route path="/home" render={(props) => <MainPage auth={auth} {...props} />} />
        <Route path="/main" render={(props) => <MainPage auth={auth} {...props} />} />
        <Route path="/sign-up" render={(props) => <SignUp auth={auth} {...props} />} />
        <Route path="/log-in" render={(props) => <Login auth={auth} {...props} />} />

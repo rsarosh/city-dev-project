@@ -20,18 +20,6 @@ class Login extends Component {
 
     return (
       <div>
-        <Navbar fluid>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">Auth0 - React</a>
-            </Navbar.Brand>
-            <Button
-              bsStyle="primary"
-              className="btn-margin"
-              onClick={this.goTo.bind(this, '')}
-            >
-              Home
-            </Button>
             {
               !isAuthenticated() && (
                   <Button
@@ -54,8 +42,7 @@ class Login extends Component {
                   </Button>
                 )
             }
-          </Navbar.Header>
-        </Navbar>
+          
       </div>
     );
   }

@@ -4,10 +4,10 @@ import loading from '../img/dog.png';
 
 class Callback extends Component {
   render() {
-    const style = '';
+    //const style = '';
 
     return (
-      <div style={style}>
+      <div>
         <img src={loading} alt="loading"/>
       </div>
     );
