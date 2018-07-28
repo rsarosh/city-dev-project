@@ -14,11 +14,11 @@ import MainPage from './MainPage';
 import TopicPage from './TopicPage';
 import CoursePage from './CoursePage';
 import SignUp from './SignupAndLogin/SignUp';
-//import Login from './SignupAndLogin/Login';
+import Login from './SignupAndLogin/Login';
+//import Login from './Login'; Switch to this to use Auth0 Sign up
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
-import Login from './Login';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 

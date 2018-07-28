@@ -29,7 +29,7 @@ export default class Login extends React.Component {
     //Requirment for most variables that's in the form. 
     validateForm() {
         return (
-            this.emailRequirments() &&
+            this.emailRequirements() &&
             this.passwordRequirements()
         );
     }
