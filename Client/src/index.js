@@ -40,7 +40,7 @@ ReactDOM.render((
     <div>
       <Route path="/callback" render={(props) => {
           handleAuthentication(props);
-          return <MainPage {...props} /> 
+          return <MainPage auth={auth} {...props} /> 
         }}/>
        <Route exact path="/" render={(props) => <MainPage auth={auth} {...props} />} />
        <Route path="/home" render={(props) => <MainPage auth={auth} {...props} />} />
