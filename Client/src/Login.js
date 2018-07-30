@@ -18,6 +18,8 @@ class Login extends Component {
   render() {
     const { isAuthenticated } = this.props.auth;
 
+	console.log(isAuthenticated());
+	
     return (
       <div>
             {

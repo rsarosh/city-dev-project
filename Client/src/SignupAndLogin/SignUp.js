@@ -8,7 +8,7 @@ import {Button, Glyphicon, HelpBlock, FormGroup, FormControl, ControlLabel} from
 *   npm install ajv
 *   npm install jquery popper.js
 */
-import axios from 'axios';
+//import axios from 'axios';
 
 import './SignUp.css';
 

@@ -25,6 +25,8 @@ export default class Auth{
     this.login = this.login.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.isAuthenticated = this.isAuthenticated.bind(this);
+	
+	this.getProfile = this.getProfile.bind(this);
   }
 
   handleAuthentication() {
@@ -64,5 +66,23 @@ export default class Auth{
     // Access Token's expiry time
     let expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
+  }
+  
+  getAccessToken() {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('No Access Token found');
+    }
+    return accessToken;
+  }
+
+  getProfile(cb) {
+    let accessToken = this.getAccessToken();
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if (profile) {
+        this.userProfile = profile;
+      }
+      cb(err, profile);
+    });
   }
 }

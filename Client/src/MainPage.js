@@ -42,7 +42,7 @@ export default class MainPage extends React.Component {
 
         return (
             <div>
-                <NavBar callbackFromParent={this.myCallback}/>
+			<NavBar auth = {this.props.auth} callbackFromParent={this.myCallback}/>
                 
                 <div className="overall-content">
                     <GetStarted skills={skillNames} />
