@@ -103,3 +103,31 @@ height: 38px;
     cursor: pointer;
     border-radius: 9px;
 }
+
+.button{
+
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: white;
+    color: black;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 9px;
+}
+
+.button:hover{
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: white;
+    color: #3898EC;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 9px;
+}
+.account-login-and-signup-link{
+    float: right;
+}
