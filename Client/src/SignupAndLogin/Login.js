@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Glyphicon, HelpBlock, FormGroup, FormControl, ControlLabel} from "react-bootstrap";
 
-export default class Login extends React.Component {
+export default class SignUp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,7 +13,7 @@ export default class Login extends React.Component {
     }
 
     //Make sure the email input the user is proper email format
-    emailRequirements() {
+    emailRequirments() {
         //DELETE THIS ONCE COMPLETED CONFIRMATION FOR EMAIL.
         //return(this.state.email > 0);
         return true;
@@ -29,7 +29,7 @@ export default class Login extends React.Component {
     //Requirment for most variables that's in the form. 
     validateForm() {
         return (
-            this.emailRequirements() &&
+            this.emailRequirments() &&
             this.passwordRequirements()
         );
     }
