@@ -16,6 +16,7 @@ import CoursePage from './CoursePage';
 import SignUp from './SignupAndLogin/SignUp';
 //import Login from './SignupAndLogin/Login';
 import Login from './Login'; //uses Auth0
+import ProfilePage from './ProfilePage';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
@@ -39,7 +40,7 @@ ReactDOM.render((
     <div>
       <Route path="/callback" render={(props) => {
           handleAuthentication(props);
-          return <MainPage {...props} /> 
+          return <MainPage auth={auth} {...props} /> 
         }}/>
        <Route exact path="/" render={(props) => <MainPage auth={auth} {...props} />} />
        <Route path="/home" render={(props) => <MainPage auth={auth} {...props} />} />
@@ -48,6 +49,7 @@ ReactDOM.render((
        <Route path="/log-in" render={(props) => <Login auth={auth} {...props} />} />
        <Route path="/topics/:topicName" render={(props) => <TopicPage auth={auth} {...props} />} />
        <Route path="/courses/:courseID" render={(props) => <CoursePage auth={auth} {...props} />} />
+	   <Route path="/profile" render={(props) => <ProfilePage auth={auth} {...props} />} />
     </div>
   </Router>
 ), document.getElementById('root'))

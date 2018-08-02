@@ -1,14 +1,6 @@
 import React from 'react';
 import {Button, Glyphicon, HelpBlock, FormGroup, FormControl, ControlLabel} from "react-bootstrap";
 
-/*Basic info on it: https://alligator.io/react/axios-react/
-*
-*if axios doesn't work install: npm install axios
-*if still getting warning of somethings install also:
-*   npm install ajv
-*   npm install jquery popper.js
-*/
-import axios from 'axios';
 
 import './SignUp.css';
 
@@ -26,8 +18,8 @@ export default class SignUp extends React.Component {
             confirmPassword: "",
             newUser: null,
             confirmationCode: "",
-            emailError: false,
-            passwordError: false,
+            emailError: true,
+            passwordError: true
             
         };
     }
@@ -36,9 +28,8 @@ export default class SignUp extends React.Component {
     emailRequirments() {
         //DELETE THIS ONCE COMPLETED CONFIRMATION FOR EMAIL.
         //return(this.state.email > 0);
-        const email = this.state.email;
-        return(email.length > 0 &&
-            email.includes('@'));
+        const email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return email.test(String(this.state.email).toLowerCase());
     }
 
     passwordRequirements() {
@@ -46,9 +37,9 @@ export default class SignUp extends React.Component {
         //return(this.state.password > 0);
 
         const password = this.state.password;
-        const alphnumeric = /[A-za-z0-9]/;
-        return(alphnumeric.test(password) &&
-            password.length > 7);
+        //Represents that it must have one uppercase lettet, be at least 8 characters, & alphnumeric.
+        const requirments = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{7,}$/;
+        return(requirments.test(password));
     }
 
     //Requirment for most variables that's in the form. 
@@ -58,7 +49,7 @@ export default class SignUp extends React.Component {
             this.state.firstName.length > 0 &&
             this.state.lastName.length > 0 &&
             this.emailRequirments() &&
-            this.passwordRequirements() > 0 &&
+            this.state.password.length > 7 &&
             this.state.age.length > 0 &&
             this.state.password === this.state.confirmPassword
         );
@@ -71,7 +62,7 @@ export default class SignUp extends React.Component {
 
     //
     handleChangeForEmailError() {
-        if(this.state.email == "" && this.emailRequirments())
+        if(this.state.email === "" && this.emailRequirments())
             this.setState({emailError:false})
         else
             this.setState({emailError:true})
@@ -84,6 +75,29 @@ export default class SignUp extends React.Component {
         });
     }
 
+    //Event handler for changes made in the email form/input
+    handleEmailChange = event => {
+        this.setState({email: event.target.value});
+        if(this.emailRequirments())
+            this.setState({emailError: true})
+        else
+            this.setState({emailError: false})
+    }
+
+     //Event handler for changes made in the password form/input box.
+     handlePasswordChange = event => {
+        this.setState({password: event.target.value});
+        if(this.passwordRequirements())
+            this.setState({passwordError: true})
+        else
+            this.setState({passwordError: false})
+    }
+
+    //does nothing just returns the password.
+    encryptPassword() {
+        return this.state.password;
+    }
+
     //action for Sign up button is pressed.
     //**User Authentication need to be added here
     handleSubmit = async event => {
@@ -92,6 +106,12 @@ export default class SignUp extends React.Component {
         this.setState({isLoading: true});
         this.setState({newUser:"test"})
         this.setState({isLoading: false})
+        
+        /*Inserting data into NewUser script
+        then running the script to upload it to the
+        database.*/
+        //this functions are from NewUserInser.js
+
     }
 
     //action for when confirmation button is submited.
@@ -169,10 +189,12 @@ export default class SignUp extends React.Component {
                         autoFocus
                         type="email"
                         value={this.state.email}
-                        onChange={this.handleChange}
+                        onChange={this.handleEmailChange.bind(this)}
+                        onClick={this.handleEmailChange.bind(this)}
                         placeholder="Enter email"
+                        autoComplete="off"
                     />
-                    {this.emailRequirments() ? null:<HelpBlock controlId='emailError'>Email format: user@gmail.com</HelpBlock>}
+                    {this.state.emailError ? null:<HelpBlock>Example email format: james@example.com </HelpBlock>}
                 </FormGroup>
                 <FormGroup controlId="age">
                     <ControlLabel>Age</ControlLabel>
@@ -190,10 +212,13 @@ export default class SignUp extends React.Component {
                         autoFocus
                         type="password"
                         value={this.state.password}
-                        onChange={this.handleChange}
+                        onChange={this.handlePasswordChange}
                         placeholder="Enter password"
+                        autoComplete="off"
                     />
-                    {this.passwordRequirements() ? null:<HelpBlock controlId='emailError'>Password must be alphnumeric and include 1 Uppercase letter. </HelpBlock>}
+                    {this.state.passwordError ? null:
+                        <HelpBlock >Use at least 8 characters (Must be alphnumeric, and include 1 Uppercase letter) . </HelpBlock>
+                    }
                 </FormGroup>
                 <FormGroup controlId="confirmPassword">
                     <ControlLabel>Confirm Password</ControlLabel>
@@ -202,9 +227,11 @@ export default class SignUp extends React.Component {
                         type="password"
                         value={this.state.confirmPassword}
                         onChange={this.handleChange}
+                        placeholder="Enter password again"
+                        autoComplete="off"
                     />
-                    {this.state.password == this.state.confirmPassword ? 
-                        null:<HelpBlock controlId='emailError'>Password does not match. </HelpBlock>}
+                    {!(this.state.passwordError && this.state.password != this.state.confirmPassword) ? 
+                        null:<HelpBlock>Password does not match. </HelpBlock>}
                 </FormGroup>
                 {/*Button is disabled till'this.state' variable all fits the requirements
                 in the validateForm function. Once clicked on it gets updated to the
