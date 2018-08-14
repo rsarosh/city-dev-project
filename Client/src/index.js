@@ -17,6 +17,7 @@ import SignUp from './SignupAndLogin/SignUp';
 //import Login from './SignupAndLogin/Login';
 import Login from './Login'; //uses Auth0
 import ProfilePage from './ProfilePage';
+import DatabasePage from './DatabasePage';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
 import history from './history';
@@ -50,6 +51,7 @@ ReactDOM.render((
        <Route path="/topics/:topicName" render={(props) => <TopicPage auth={auth} {...props} />} />
        <Route path="/courses/:courseID" render={(props) => <CoursePage auth={auth} {...props} />} />
 	   <Route path="/profile" render={(props) => <ProfilePage auth={auth} {...props} />} />
+	   <Route path="/db-handle" render={ (props) => <DatabasePage auth={auth} {...props} />} />
     </div>
   </Router>
 ), document.getElementById('root'))

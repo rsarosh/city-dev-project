@@ -45,10 +45,7 @@ export default class NavBar extends React.Component {
 							<div class='account-login-signup-link'><UserLoginAndSignUp/></div>
 						)
 					}
-					
-					{
-						//<div class='account-login-signup-link'><UserLoginAndSignUp/></div>
-					}
+					<Link to='/db-handle' class='button'>DB Test</Link>
 					</div>
                     <div class="dropdown">
                         <div class="w-icon-dropdown-toggle">
@@ -89,7 +86,6 @@ class UserLoginAndSignUp extends React.Component {
                     
                         <Link to={loginHref} class='button'>Log in/out</Link> 
                     
-                
             </div>
         );
     }

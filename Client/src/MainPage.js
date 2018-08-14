@@ -19,7 +19,8 @@ export default class MainPage extends React.Component {
 
         this.state = {
             'mobileView': mobileView, 
-            searchText: null
+            searchText: null,
+			users: []
         };
     
         this.myCallback = function(dataFromChild){
@@ -42,7 +43,7 @@ export default class MainPage extends React.Component {
 
         return (
             <div>
-			<NavBar auth = {this.props.auth} callbackFromParent={this.myCallback}/>
+				<NavBar auth = {this.props.auth} callbackFromParent={this.myCallback}/>
                 
                 <div className="overall-content">
                     <GetStarted skills={skillNames} />
