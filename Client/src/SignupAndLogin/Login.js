@@ -1,6 +1,16 @@
 import React from 'react';
 import {Button, Glyphicon, HelpBlock, FormGroup, FormControl, ControlLabel} from "react-bootstrap";
 
+/*
+*    
+*    Just a basic login form.
+*    Takes input but doesn't really do anything.
+*    No form validation.
+*
+*/
+
+
+
 export default class SignUp extends React.Component {
     constructor(props) {
         super(props);

@@ -1,8 +1,21 @@
 import React from 'react';
 import {Button, Glyphicon, HelpBlock, FormGroup, FormControl, ControlLabel} from "react-bootstrap";
-
-
 import './SignUp.css';
+
+/*
+*
+* SignUp.js contains to two pages one for registration form
+* and confirmation page.
+*
+* Registration page is rendered in first due the state variable 
+* 'newUser'. If newUser is set to null it won't render the confiramtion page.
+* The registration page also handles form validation for email, password, & 
+* password confirmation.
+*
+* this.state.newUser is updated in the function handleSubmit for the 
+* registration page. 
+*
+*/
 
 export default class SignUp extends React.Component {
     constructor(props) {
@@ -101,16 +114,12 @@ export default class SignUp extends React.Component {
     //action for Sign up button is pressed.
     //**User Authentication need to be added here
     handleSubmit = async event => {
-        event.preventDefault();
-        //axios.post('/api/users', {user: this.state})
+
         this.setState({isLoading: true});
+        //When new user is updated to anything expect null page is 
+        //rerendered to confirmation page.
         this.setState({newUser:"test"})
         this.setState({isLoading: false})
-        
-        /*Inserting data into NewUser script
-        then running the script to upload it to the
-        database.*/
-        //this functions are from NewUserInser.js
 
     }
 
